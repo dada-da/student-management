@@ -1,0 +1,6 @@
+studentId,firstName,lastName,email,phoneNumber,address,classId
+STU_PTI00001,John,Doe,john@example.com,0123456789,123 Street A,C01
+STU_PTI00002,Jane,Smith,jane@example.com,0987654321,456 Street B,C02
+STU_PTI00003,Michael,Brown,michael@example.com,0911222333,789 Street C,C01
+STU_PTI00004,Emily,Davis,emily@example.com,0933444555,321 Street D,C03
+STU_PTI00005,David,Wilson,david@example.com,0955666777,654 Street E,C02
