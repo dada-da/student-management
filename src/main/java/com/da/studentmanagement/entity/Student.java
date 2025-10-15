@@ -34,6 +34,10 @@ public class Student {
         this.studentId = studentId;
     }
 
+    public Student() {
+
+    }
+
     public String getStudentId() {
         return studentId;
     }

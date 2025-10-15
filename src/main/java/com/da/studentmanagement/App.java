@@ -11,16 +11,19 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        final String id_file = "./student_ids.txt";
-        final String student_file = "./students.csv";
+        final String id_file = "src/main/resources/student_ids.txt";
+        final String student_file = "src/main/resources/students.csv";
 
         StudentData sd = new StudentData(student_file);
         StudentIdData studentIdData = new StudentIdData(id_file);
+
         StudentIdService studentIdService = new StudentIdService(studentIdData);
         StudentService studentService = new StudentServiceImpl(sd);
-        StudentController studentController = new StudentController(studentService);
 
         Scanner scanner = new Scanner(System.in);
+
+        StudentController studentController = new StudentController(studentService, studentIdService, scanner);
+
         boolean running = true;
 
         while (running) {
@@ -37,6 +40,7 @@ public class App {
                     studentController.handleGetAll();
                     break;
                 case "2":
+                    studentController.handleCreate();
                     break;
                 case "3":
                     System.out.println("[Save to CSV] feature coming soon...");
