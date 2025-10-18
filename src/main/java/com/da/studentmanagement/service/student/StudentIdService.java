@@ -26,8 +26,8 @@ public class StudentIdService {
     }
 
     private void saveStudentId(String studentId) {
-        List<String> studentIdList = new ArrayList<>(this.studentIdSet);
         this.studentIdSet.add(studentId);
+        List<String> studentIdList = new ArrayList<>(this.studentIdSet);
         this.studentIdFileData.saveToFile(studentIdList);
     }
 

@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        final String id_file = "src/main/resources/student_ids.txt";
-        final String student_file = "src/main/resources/students.csv";
+        final String id_file = "data/student_ids.txt";
+        final String student_file = "data/students.csv";
 
         StudentData sd = new StudentData(student_file);
         StudentIdData studentIdData = new StudentIdData(id_file);

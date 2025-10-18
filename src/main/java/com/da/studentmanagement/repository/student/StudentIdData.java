@@ -20,7 +20,6 @@ public class StudentIdData implements IBaseFileData<String> {
                 writer.write(studentId);
                 writer.newLine();
             }
-            System.out.println("CSV file written successfully!");
         } catch (IOException e) {
             System.err.println("Error writing CSV file: " + e.getMessage());
         }
@@ -29,9 +28,10 @@ public class StudentIdData implements IBaseFileData<String> {
     @Override
     public List<String> loadFromFile() {
         List<String> studentIds = new ArrayList<>();
+        File file = new File(this.filePath);
+
         try {
-            try (InputStream is = StudentData.class.getClassLoader().getResourceAsStream(this.filePath);
-                 BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+            try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     studentIds.add(line);

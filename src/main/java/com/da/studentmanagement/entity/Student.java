@@ -103,6 +103,17 @@ public class Student {
     }
 
     public String toString() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s",
+                studentId != null ? studentId : "",
+                firstName != null ? firstName : "",
+                lastName != null ? lastName : "",
+                email != null ? email : "",
+                phoneNumber != null ? phoneNumber : "",
+                address != null ? address : "",
+                classId != null ? classId : "");
+    }
+
+    public String toTableCell() {
         return String.format("| %-12s | %-8s | %-8s | %-20s | %-12s | %-15s | %-4s |",
                 studentId != null ? studentId : "",
                 firstName != null ? firstName : "",

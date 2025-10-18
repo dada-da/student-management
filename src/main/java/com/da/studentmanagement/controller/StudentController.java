@@ -61,7 +61,7 @@ public class StudentController {
                 "|" + "-".repeat(6) + "|");
 
         for (Student student : students) {
-            System.out.println(student.toString());
+            System.out.println(student.toTableCell());
         }
     }
 }

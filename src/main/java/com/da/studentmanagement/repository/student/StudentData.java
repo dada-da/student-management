@@ -2,15 +2,10 @@ package com.da.studentmanagement.repository.student;
 
 import com.da.studentmanagement.entity.Student;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.stream.Collectors;
 
 public class StudentData implements StudentRepository {
@@ -39,10 +34,10 @@ public class StudentData implements StudentRepository {
     private List<Student> loadFromFile() {
         List<Student> students = new ArrayList<>();
         boolean isFirstLine = true;
+        File file = new File(this.filePath);
 
         try {
-            try (InputStream is = StudentData.class.getClassLoader().getResourceAsStream(this.filePath);
-                 BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+            try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     if (isFirstLine) {
